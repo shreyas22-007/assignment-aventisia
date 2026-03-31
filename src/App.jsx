@@ -18,34 +18,33 @@ function App() {
 
   return (
     <Layout>
-      <div className="flex flex-col h-full w-full">
+      <div className="flex flex-col flex-1 w-full">
 
         {/* Page Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 md:mb-8 gap-4">
-          <h1 className="text-xl md:text-2xl font-bold text-slate-800 tracking-tight">Knowledge Base</h1>
+        <div className="flex justify-between items-center mb-10 w-full">
+          <h1 className="text-2xl font-bold text-slate-800 tracking-tight">Knowledge Base</h1>
 
-          <div className="flex w-full sm:w-auto items-center gap-2 md:gap-3">
-            <div className="relative flex-1 sm:flex-none">
+          <div className="flex items-center gap-4">
+            <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <Search size={16} className="text-slate-400" />
               </div>
               <input
                 type="text"
-                placeholder="Search..."
-                className="pl-9 pr-4 py-2 border border-slate-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] bg-white w-full sm:w-[240px]"
+                placeholder="Search.."
+                className="pl-9 pr-4 py-2 border border-slate-100 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-[var(--color-primary)] bg-white w-[240px] font-medium"
               />
             </div>
-            <Button onClick={() => setIsDrawerOpen(true)} className="w-auto sm:w-[140px] px-4 sm:px-0 gap-2 justify-center py-2.5 whitespace-nowrap">
-              <Plus size={18} />
-              <span className="hidden sm:inline">Create New</span>
-              <span className="sm:hidden">Create</span>
+            <Button onClick={() => setIsDrawerOpen(true)} className="px-5 py-2.5 gap-2 h-10 text-sm font-semibold shadow-none">
+              <Plus size={16} />
+              <span>Create New</span>
             </Button>
           </div>
         </div>
 
         {/* Card Grid Container */}
-        <div className="border border-slate-200 rounded-xl p-4 mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 content-start">
+        <div className="border border-slate-200 rounded-xl p-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 content-start">
             {cardsData.map((card, index) => (
               <Card
                 key={index}
@@ -58,7 +57,9 @@ function App() {
         </div>
 
         {/* Footer Pagination */}
-        <Pagination totalRows={6} />
+        <div className="mt-auto pt-8">
+          <Pagination totalRows={6} />
+        </div>
       </div>
 
       {/* Create New Drawer */}

@@ -7,29 +7,31 @@ const Card = ({ title, description, date }) => {
       style={{
         backgroundColor: '#fff',
         border: '1px solid #e2e8f0',
-        borderRadius: '14px',
-        padding: '22px 24px 18px',
+        borderRadius: '12px',
+        padding: '24px 24px 20px',
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '180px',
-        boxShadow: '0 1px 3px rgba(0,0,0,0.06)',
-        transition: 'box-shadow 0.2s',
+        minHeight: '200px',
+        boxShadow: 'none',
+        transition: 'all 0.1s ease',
         cursor: 'default',
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.05)';
+        e.currentTarget.style.borderColor = '#cbd5e1';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.06)';
+        e.currentTarget.style.boxShadow = 'none';
+        e.currentTarget.style.borderColor = '#e2e8f0';
       }}
     >
 
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '14px' }}>
-        <h3 style={{ fontSize: '15px', fontWeight: 600, color: '#1e293b', margin: 0 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+        <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#0f172a', margin: 0, letterSpacing: '-0.01em' }}>
           {title}
         </h3>
-        <button style={{ background: 'none', border: 'none', color: '#94a3b8', padding: '2px', borderRadius: '4px', cursor: 'pointer', flexShrink: 0 }}>
+        <button style={{ background: 'none', border: 'none', color: '#cbd5e1', padding: '2px', borderRadius: '4px', cursor: 'pointer', flexShrink: 0 }}>
           <MoreVertical size={16} />
         </button>
       </div>
@@ -38,7 +40,7 @@ const Card = ({ title, description, date }) => {
       <p
         style={{
           fontSize: '13px',
-          lineHeight: '1.65',
+          lineHeight: '1.75',
           color: '#64748b',
           margin: 0,
           overflow: 'hidden',
@@ -52,8 +54,8 @@ const Card = ({ title, description, date }) => {
       </p>
 
       {/* Footer */}
-      <div style={{ paddingTop: '10px', borderTop: '1px solid #f1f5f9', marginTop: '18px' }}>
-        <span style={{ fontSize: '11px', color: '#9ca3af', margin: 0 }}>
+      <div style={{ paddingTop: '12px', borderTop: '1px solid #f8fafc', marginTop: '20px' }}>
+        <span style={{ fontSize: '11px', color: '#94a3b8', margin: 0, fontWeight: 500 }}>
           Created On: {date}
         </span>
       </div>

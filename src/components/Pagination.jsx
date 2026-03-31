@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from 'lucide-r
 
 const Pagination = ({ totalRows, rowsPerPageOptions = [10, 20, 50] }) => {
   return (
-    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 mt-auto border-t border-slate-100 pb-4">
+    <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 mt-auto border-t border-slate-100/50 pb-4">
       <div className="text-sm font-medium text-slate-700">{totalRows} rows</div>
       
       <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6">

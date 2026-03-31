@@ -10,8 +10,8 @@ const Layout = ({ children }) => {
       <Header onMenuClick={() => setIsSidebarOpen(true)} />
       <div className="flex flex-1 overflow-hidden relative">
         <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-        <main className="flex-1 overflow-y-auto w-full bg-white px-4 py-6 md:px-8">
-          <div className="max-w-7xl mx-auto">
+        <main className="flex-1 flex flex-col overflow-y-auto w-full bg-[#fafafa] pl-10 lg:pl-32 pr-6 lg:pr-8 py-8 md:py-10">
+          <div className="w-full max-w-[1400px] flex flex-col flex-1">
             {children}
           </div>
         </main>
